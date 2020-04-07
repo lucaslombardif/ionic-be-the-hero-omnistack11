@@ -3,8 +3,14 @@
 
     <div class="headerContainer">
       <img src="../assets/imgs/logo.png">
-      <ion-icon class="headerButtonIcon" name="md-arrow-round-back"></ion-icon>
-      <p class="headerButtonText">Voltar</p>
+      <div>
+        <button (click)=backToHome() ion-button icon-start clear class="headerButtonIcon">
+          <ion-icon name="md-arrow-round-back"></ion-icon>
+          <p class="headerButtonText"> 
+            Voltar
+          </p>
+        </button>
+      </div>
     </div>
 
     <div class="incident">

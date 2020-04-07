@@ -1,7 +1,7 @@
 page-detail {
   .detailsContainer {
     flex: 1;
-    padding: 0 24;
+    padding: 0 4px;
     padding-top: 5px;
   }
 
@@ -16,6 +16,7 @@ page-detail {
   .headerButtonIcon {
     color: #E02041;
     margin-left: 160px;
+    text-transform: none;
   }
 
   .headerButtonText {
@@ -73,6 +74,7 @@ page-detail {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-transform: none;
   }
 
   .buttonEmail { 
@@ -84,5 +86,6 @@ page-detail {
     justify-content: center;
     align-items: center;
     margin-left: 4px;
+    text-transform: none;
   }
 }
