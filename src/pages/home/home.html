@@ -10,12 +10,12 @@
     <h1 class="mainTitle">Bem-vindo</h1>
     <p class="headerText">Escolha um dos casos abaixo e salve o dia!</p>
 
-    <ion-list class="incidentsList">
+    <ion-list class="incidentsList" *ngFor="let incident of incidents">
       <div class="incident">
-        <h6 class="incidentOng">Irmão Animal</h6>
-        <h6 class="incidentOng">Angra dos reis - RJ</h6>
-        <p class="incidentDescription">Um gato foi atropelado e sua perna já era</p>
-        <p class="incidentValue">R$200</p>
+        <h6 class="incidentOng">{{incident.name}}</h6>
+        <h6 class="incidentOng">{{incident.city}} - {{incident.uf}}</h6>
+        <p class="incidentDescription">{{incident.description}}</p>
+        <p class="incidentValue">R$ {{incident.value}}</p>
 
         <div class="incidentButton">
           <button (click)=viewDetails() ion-button small clear class="incidentButtonText">Ver mais detalhes
@@ -24,31 +24,6 @@
         </div>
       </div>
 
-      <div class="incident">
-        <h6 class="incidentOng">Irmão Animal</h6>
-        <h6 class="incidentOng">Angra dos reis - RJ</h6>
-        <p class="incidentDescription">Um gato foi atropelado e sua perna já era</p>
-        <p class="incidentValue">R$200</p>
-
-        <div class="incidentButton">
-          <button (click)=viewDetails() ion-button small clear class="incidentButtonText">Ver mais detalhes
-            <ion-icon name="md-arrow-round-forward"></ion-icon>
-          </button>
-        </div>
-      </div>
-
-      <div class="incident">
-        <h6 class="incidentOng">Irmão Animal</h6>
-        <h6 class="incidentOng">Angra dos reis - RJ</h6>
-        <p class="incidentDescription">Um gato foi atropelado e sua perna já era</p>
-        <p class="incidentValue">R$200</p>
-
-        <div class="incidentButton">
-          <button (click)=viewDetails() ion-button small clear class="incidentButtonText">Ver mais detalhes
-            <ion-icon name="md-arrow-round-forward"></ion-icon>
-          </button>
-        </div>
-      </div>
     </ion-list>
 
   </div>

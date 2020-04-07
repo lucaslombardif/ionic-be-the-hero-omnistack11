@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api';
 
 
 @Component({
@@ -8,12 +9,23 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  public incidents;
 
+  constructor(public navCtrl: NavController, public api : ApiProvider) {
+  }
+
+
+  ionViewDidLoad() { 
+    this.loadIncidents();
   }
 
   viewDetails() { 
     this.navCtrl.push('DetailPage');
+  }
+
+  public async loadIncidents() {
+    this.incidents = await this.api.getIncidents();
+    console.log(this.incidents);
   }
 
 }
