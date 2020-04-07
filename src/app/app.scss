@@ -1,0 +1,8 @@
+$fa-font-path: "../assets/fonts" !default;
+
+@import "font-awesome";
+
+i[class^="fa-"],
+ion-icon[class^="fa-"] {
+  font-family: "FontAwesome" !important;
+}
