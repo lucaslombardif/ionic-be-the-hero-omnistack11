@@ -14,12 +14,15 @@ import { HomePage } from '../home/home';
   templateUrl: 'detail.html',
 })
 export class DetailPage {
+  
+  public incident: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
+     this.incident = this.navParams.data.incident;
+     console.log(this.incident);
   }
 
   backToHome() { 

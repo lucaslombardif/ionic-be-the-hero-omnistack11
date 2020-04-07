@@ -14,7 +14,6 @@ export class ApiProvider {
     const incidents = await this.http.get(this.apiURL + '/incidents').toPromise();
 
     return incidents;
-    
   }
 
 }

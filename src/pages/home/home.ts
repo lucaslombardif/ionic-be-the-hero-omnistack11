@@ -19,8 +19,8 @@ export class HomePage {
     this.loadIncidents();
   }
 
-  viewDetails() { 
-    this.navCtrl.push('DetailPage');
+  viewDetails(incident) { 
+    this.navCtrl.push('DetailPage', {incident} );
   }
 
   public async loadIncidents() {

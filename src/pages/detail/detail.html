@@ -13,11 +13,11 @@
       </div>
     </div>
 
-    <div class="incident">
-      <h6 class="incidentOng">Irmão Animal</h6>
-      <h6 class="incidentOng">Angra dos reis - RJ</h6>
-      <p class="incidentDescription">Um gato foi atropelado e sua perna já era</p>
-      <p class="incidentValue">R$700,00</p>
+    <div class="incident" *ngIf="incident">
+      <h6 class="incidentOng">{{incident.name}}</h6>
+      <h6 class="incidentOng">{{incident.city}} - {{incident.uf}}</h6>
+      <p class="incidentDescription">{{incident.description}}</p>
+      <p class="incidentValue">R$ {{incident.value}}</p>
     </div>
 
     <div class="contact">
