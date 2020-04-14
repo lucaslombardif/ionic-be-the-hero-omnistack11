@@ -17,6 +17,7 @@ export class HomePage {
 
   ionViewDidLoad() { 
     this.loadIncidents();
+    this.api.getHeaders();
   }
 
   viewDetails(incident) { 

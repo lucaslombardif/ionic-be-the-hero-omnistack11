@@ -28,9 +28,9 @@ export class DetailPage {
   sendWppMessage() {
     let message = `Olá ${this.incident.name}, estou entrando em contato pois gostaria de ajudar no caso: "${this.incident.title}" com o valor de R$ ${this.incident.value};`
 
-    this.socialSharing.shareViaWhatsApp(message, null, null)
+    this.socialSharing.shareViaWhatsAppToReceiver(this.incident.whatsapp, message)
       .then((sucess) => {
-        console.log('Mensagem enviada com sucesso!', sucess);
+        console.log(sucess);
       }).catch((err) => {
         console.log(err);
       });
@@ -38,6 +38,7 @@ export class DetailPage {
 
   sendEmailMessage() {
     let message = `Olá ${this.incident.name}, estou entrando em contato pois gostaria de ajudar no caso: "${this.incident.title}" com o valor de R$ ${this.incident.value};`
+
     this.socialSharing.shareViaEmail(
       message,
       `Herói do caso: ${this.incident.title}`,
