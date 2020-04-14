@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import axios from 'axios';
 
 @Injectable()
 export class ApiProvider {
 
   public apiURL = 'http://192.168.1.108:3333/incidents';
+  public totalIncidents;
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
@@ -16,15 +18,13 @@ export class ApiProvider {
     return incidents;
   }
 
-  public getHeaders() {
-    this.http.get(this.apiURL, { observe: 'response' }).subscribe(
-      response => {
-        console.log(response.headers.get('x-Total-Count'));
-        console.log(response.headers['X-Total-Count']);
-      }, error => {
-        console.error(error);
-      }
-    );
+  public async getCount() {
+    await axios.get(this.apiURL).then((response) => {
+      this.totalIncidents = response.headers['x-total-count'];
+    }).catch((err) => {
+      return err;
+    })
+    return this.totalIncidents;
   }
 
 }

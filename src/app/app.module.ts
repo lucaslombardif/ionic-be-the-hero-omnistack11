@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ApiProvider } from '../providers/api/api';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,9 +28,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ApiProvider,
-    SocialSharing
+    SocialSharing,
   ]
 })
-export class AppModule {}
+export class AppModule { }

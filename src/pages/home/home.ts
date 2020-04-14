@@ -10,23 +10,28 @@ import { ApiProvider } from '../../providers/api/api';
 export class HomePage {
 
   public incidents;
+  public totalIncidents;
 
-  constructor(public navCtrl: NavController, public api : ApiProvider) {
+  constructor(public navCtrl: NavController, public api: ApiProvider) {
   }
 
-
-  ionViewDidLoad() { 
+  ionViewDidLoad() {
     this.loadIncidents();
-    this.api.getHeaders();
+    this.getTotalIncidents();
   }
 
-  viewDetails(incident) { 
-    this.navCtrl.push('DetailPage', {incident} );
+  viewDetails(incident) {
+    this.navCtrl.push('DetailPage', { incident });
   }
 
   public async loadIncidents() {
     this.incidents = await this.api.getIncidents();
     console.log(this.incidents);
+  }
+
+  public async getTotalIncidents() {
+    this.totalIncidents = await this.api.getCount();
+    console.log(this.totalIncidents);
   }
 
 }
