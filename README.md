@@ -21,7 +21,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## :information_source: Como usar 
 
-### Vá ao projeto original, e rode o Backend: 
+### Vá ao projeto <a href="https://github.com/lucaslombardif/be-the-hero-omnistack-11">original</a>, e rode o Backend: 
 
 ```bash
 # Clone o Repositório
